@@ -31,11 +31,24 @@
           DSDontWriteNetworkStores = true;
           DSDontWriteUSBStores = true;
         };
+
       };
       # Show hidden files in Finder
       finder = {
         AppleShowAllFiles = true;
       };
+
+      dock = {
+        mineffect = "scale";
+        autohide = false;
+      };
+
+      trackpad = {
+        Clicking = true;
+      };
+
+      # Disable "Natural" scrolling direction
+      NSGlobalDomain."com.apple.swipescrolldirection" = false;
     };
 
     primaryUser = "${username}";
