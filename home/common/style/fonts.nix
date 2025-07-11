@@ -6,6 +6,7 @@
 }:
 let
   codelia = pkgs.callPackage ../../../packages/codelia { };
+  tabulamore-script = pkgs.callPackage ../../../packages/tabulamore-script { };
 in
 {
 
@@ -26,6 +27,7 @@ in
       noto-fonts-emoji
 
       codelia
+      tabulamore-script
 
     ];
 
