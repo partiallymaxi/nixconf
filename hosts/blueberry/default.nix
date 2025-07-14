@@ -1,10 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [ ../../modules/system.nix ];
 
-  isoImage.makeEfiBootable = true;
+  networking.hostName = "blueberry";
 
-  # USB booting
-  isoImage.makeUsbBootable = true;
+  boot = {
+    loader.grub.enable = false;
+    loader.generic-extlinux-compatible.enable = true;
+  };
 
 }

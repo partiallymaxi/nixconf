@@ -1,7 +1,6 @@
 {
   username,
   pkgs,
-  agenix,
   ...
 }:
 {
@@ -19,6 +18,8 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   nix.linux-builder.enable = true;
+
+  networking.hostName = "orange";
 
   system = {
     # Used for backwards compatibility, please read the changelog before changing.
@@ -81,7 +82,6 @@
       "steam"
       "spotify"
       "firefox"
-      "balenaetcher"
     ];
 
     enable = true;

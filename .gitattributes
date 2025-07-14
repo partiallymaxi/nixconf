@@ -1,3 +1,6 @@
 packages/codelia/fonts/*.otf filter=git-agecrypt diff=git-agecrypt
 packages/tabulamore-script/fonts/*.otf filter=git-agecrypt diff=git-agecrypt
 packages/**/*.otf filter=git-agecrypt diff=git-agecrypt
+
+
+git-secrets/** filter=git-agecrypt diff=git-agecrypt

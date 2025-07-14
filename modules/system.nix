@@ -19,6 +19,7 @@
 
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDi7EAxA1wp9RHxwrFHMcONga2Jv0GWXgTvhun3kH/9i"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIIN+r9M+GPJLWthjDZEH6Djp+IOEUd1/v0lRMbvBXNvVAAAABHNzaDo= i was here"
     ];
   };
 
@@ -71,6 +72,9 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Enable networking
+  networking.networkmanager.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {

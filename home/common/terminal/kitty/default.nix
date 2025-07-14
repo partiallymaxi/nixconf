@@ -44,6 +44,7 @@ with lib;
         "cmd+w" = "close_tab";
         "cmd+c" = "copy_to_clipboard";
         "cmd+v" = "paste_from_clipboard";
+        "cmd+f" = "toggle_fullscreen";
         "cmd+q" = "quit";
 
         "cmd+1" = "goto_tab 1";
