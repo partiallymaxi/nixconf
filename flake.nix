@@ -70,7 +70,10 @@
             modules = [
               ./hosts/blueberry
 
-              "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+              # "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+
+              "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+              "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
 
               # home-manager.nixosModules.home-manager
               # {

@@ -73,10 +73,15 @@
     # install apps from the Mac App Store
     masApps = { };
 
+    brews = [ "mas" ];
+
     casks = [
       "discord"
       "kitty"
       "steam"
+      "spotify"
+      "firefox"
+      "balenaetcher"
     ];
 
     enable = true;
