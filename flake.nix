@@ -37,10 +37,10 @@
         orange =
           let
             inherit (inputs.nixpkgs) lib;
-            utils = import ./utils.nix { inherit lib; };
+            mylib = import ./utils.nix { inherit lib; };
             username = "maxi";
             specialArgs = {
-              inherit username utils;
+              inherit username mylib;
             };
           in
           nix-darwin.lib.darwinSystem {
@@ -68,8 +68,8 @@
           let
             username = "maxi";
             inherit (inputs.nixpkgs) lib;
-            utils = import ./utils.nix { inherit lib; };
-            specialArgs = { inherit username utils; };
+            mylib = import ./utils.nix { inherit lib; };
+            specialArgs = { inherit username mylib; };
           in
           nixpkgs.lib.nixosSystem {
             inherit specialArgs;

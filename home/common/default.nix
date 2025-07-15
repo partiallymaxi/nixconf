@@ -1,3 +1,10 @@
-{ utils, lib, config, ... }: with lib; {
+{
+  utils,
+  lib,
+  config,
+  ...
+}:
+with lib;
+{
   imports = utils.listFiles ./.;
 }
