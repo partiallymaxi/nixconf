@@ -1,11 +1,13 @@
 {
-  utils,
-  lib,
-  config,
+  username,
   ...
 }:
-with lib;
 {
-  imports = lists.remove darwin.nix utils.listFiles ./.;
+  home = {
+    inherit username;
+    homeDirectory = "/home/${username}";
+  };
+
+  imports = [ ./core.nix ];
 
 }

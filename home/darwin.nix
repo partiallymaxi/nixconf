@@ -1,5 +1,9 @@
-{ username, ... }: {
-  home.homeDirectory = "/Users/${username}";
+{ username, ... }:
+{
+  home = {
+    inherit username;
+    homeDirectory = "/Users/${username}";
+  };
 
   imports = [ ./core.nix ];
 }
