@@ -75,7 +75,7 @@
             mylib = import ./utils.nix { inherit lib; };
 
             username = "maxi";
-            hostname = "orange";
+            hostname = "blueberry";
 
             specialArgs = { inherit hostname username mylib; };
           in
