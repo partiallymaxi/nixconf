@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system.nix
+    ../../modules/system
   ];
 
   networking.hostName = "blueberry";
