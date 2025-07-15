@@ -1,5 +1,12 @@
-{ config, utils, lib, ... }: with lib; {
-  imports = utils.listFiles ./.;
+{
+  config,
+  mylib,
+  lib,
+  ...
+}:
+with lib;
+{
+  imports = mylib.listFiles ./.;
 
   options = {
     style = {
