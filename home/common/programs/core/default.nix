@@ -9,6 +9,9 @@ with lib;
 
   config = mkIf config.programs.core.enable {
     home.packages = with pkgs; [
+      # ssh
+      openssh # default version in macos seems incomplete
+
       # archives
       zip
       unzip
@@ -16,6 +19,7 @@ with lib;
       zstd
 
       # utils
+      nh # nix cli
       ripgrep # better grep
       htop # alternate top
       nnn # tui folder
