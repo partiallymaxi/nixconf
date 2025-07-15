@@ -19,7 +19,8 @@
     agenix-rekey.url = "github:oddlama/agenix-rekey";
     agenix-rekey.inputs.nixpkgs.follows = "nixpkgs";
 
-    private-fonts.url = "github:mostlymaxi/private-fonts";
+    private-fonts.url = "git+ssh://git@github.com/mostlymaxi/private-fonts.git?shallow=1";
+    private-fonts.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 

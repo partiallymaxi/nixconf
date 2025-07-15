@@ -308,6 +308,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1752436162,
+        "narHash": "sha256-Kt1UIPi7kZqkSc5HVj6UY5YLHHEzPBkgpNUByuyxtlw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "dfcd5b901dbab46c9c6e80b265648481aafb01f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1751949589,
@@ -393,6 +409,28 @@
         "type": "github"
       }
     },
+    "private-fonts": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1752594119,
+        "narHash": "sha256-5cnCsEEsoGwVCW7UBiERtEMxkapaAZnFi+GDum3WKxY=",
+        "ref": "refs/heads/main",
+        "rev": "8bc8ab598c269b13e652326fcb124ecfb64dabb9",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/mostlymaxi/private-fonts.git"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/mostlymaxi/private-fonts.git"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -401,7 +439,8 @@
         "nix-darwin": "nix-darwin",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "private-fonts": "private-fonts"
       }
     },
     "systems": {
