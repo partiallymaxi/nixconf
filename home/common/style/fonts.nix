@@ -4,10 +4,6 @@
   config,
   ...
 }:
-let
-  codelia = pkgs.callPackage ../../../packages/codelia { inherit config; };
-  # tabulamore-script = pkgs.callPackage ../../../packages/tabulamore-script { };
-in
 {
 
   # options = {
@@ -26,7 +22,7 @@ in
       noto-fonts
       noto-fonts-emoji
 
-      codelia
+      # codelia
       # tabulamore-script
 
     ];
