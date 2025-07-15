@@ -18,8 +18,7 @@
     ];
 
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDi7EAxA1wp9RHxwrFHMcONga2Jv0GWXgTvhun3kH/9i"
-      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIIN+r9M+GPJLWthjDZEH6Djp+IOEUd1/v0lRMbvBXNvVAAAABHNzaDo= i was here"
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIDrwB1o6SQRY7DlJ2JxPw9dedIkbZBCnzpd777RQW3hCAAAABHNzaDo="
     ];
   };
 
@@ -95,7 +94,10 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     curl
+
     git
+    git-agecrypt
+    age-plugin-fido2-hmac
   ];
 
 }

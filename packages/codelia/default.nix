@@ -1,29 +1,22 @@
 {
   stdenvNoCC,
   lib,
-  pkgs,
-  config,
 }:
 stdenvNoCC.mkDerivation {
   pname = "codelia-encrypted";
   version = "0.1";
-  # src = config.age.secrets.codelia.path;
-  src = ./.;
 
-  dontUnpack = true;
+  src = builtins.fetchFromGitHub {
+    owner = "mostlymaxi";
+    repo = "private-fonts";
+    rev = "bc6661874c7b4a4d7f3de54740452b492b552f4a";
 
-  buildInputs = with pkgs; [
-    unzip
-  ];
-
-  buildPhase = ''
-
-  '';
+    hash = "AAAA";
+  };
 
   installPhase = ''
-    unzip fonts.zip
     mkdir -p $out/share/fonts/truetype/
-    cp -r $src/fonts/*.otf $out/share/fonts/truetype/
+    cp -r $src/Codelia/*.otf $out/share/fonts/truetype/
   '';
 
   meta = with lib; {

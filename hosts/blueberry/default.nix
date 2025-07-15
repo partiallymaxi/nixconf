@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  imports = [ ../../modules/system.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/system.nix
+  ];
 
   networking.hostName = "blueberry";
 
@@ -9,4 +12,7 @@
     loader.generic-extlinux-compatible.enable = true;
   };
 
+  system = {
+    stateVersion = "25.11";
+  };
 }

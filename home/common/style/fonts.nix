@@ -6,7 +6,7 @@
 }:
 let
   codelia = pkgs.callPackage ../../../packages/codelia { inherit config; };
-  tabulamore-script = pkgs.callPackage ../../../packages/tabulamore-script { };
+  # tabulamore-script = pkgs.callPackage ../../../packages/tabulamore-script { };
 in
 {
 
@@ -19,11 +19,6 @@ in
   # };
 
   config = lib.mkIf (config.style.fonts.enable == true) {
-
-    age.secrets = {
-      codelia.rekeyFile = ../../../packages/codelia/fonts.zip.age;
-    };
-
     home.packages = with pkgs; [
       nerd-fonts.caskaydia-cove # includes ligatures <=>
       nerd-fonts.caskaydia-mono
@@ -32,7 +27,7 @@ in
       noto-fonts-emoji
 
       codelia
-      tabulamore-script
+      # tabulamore-script
 
     ];
 
