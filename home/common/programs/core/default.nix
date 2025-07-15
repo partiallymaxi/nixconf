@@ -22,9 +22,6 @@ with lib;
       fzf # fuzzy finder
       grc # generic colorizer
       fastfetch
-      openssh
-      git-agecrypt
-      # yubikey-manager
 
       # containerization
       docker-compose

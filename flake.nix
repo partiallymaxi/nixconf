@@ -76,20 +76,14 @@
             modules = [
               ./hosts/blueberry
 
-              # nixos-hardware.nixosModules.raspberry-pi-4
-              "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
 
-              # "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-              # "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
-
-              # home-manager.nixosModules.home-manager
-              # {
-              #   home-manager.useGlobalPkgs = true;
-              #   home-manager.useUserPackages = true;
-              #
-              #   home-manager.extraSpecialArgs = inputs // specialArgs;
-              #   home-manager.users.${username} = import ./users/${username}/home.nix;
-              # }
+                home-manager.extraSpecialArgs = inputs // specialArgs;
+                home-manager.users.${username} = import ./users/${username}/headless-home.nix;
+              }
             ];
           };
 
