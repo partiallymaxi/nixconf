@@ -1,37 +1,9 @@
 {
   username,
-  pkgs,
   ...
 }:
 {
-
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    vim
-    curl
-    wget
-    git
-  ];
-
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
-
-  nix.linux-builder.enable = true;
-
-  nix.linux-builder = {
-    ephemeral = true;
-    maxJobs = 4;
-    config = {
-      virtualisation = {
-        darwin-builder = {
-          diskSize = 80 * 1024;
-          memorySize = 16 * 1024;
-        };
-        cores = 6;
-      };
-    };
-  };
+  imports = [ ../../modules/system/darwin.nix ];
 
   networking.hostName = "orange";
 
@@ -75,11 +47,6 @@
   # annoying MacOS stuff
   # this needs to be enabled both here AND in home-manager
   programs.fish.enable = true;
-
-  users.users.${username} = {
-    name = "${username}";
-    home = "/Users/${username}";
-  };
 
   # Enables TouchID for sudo operations
   security.pam.services.sudo_local.touchIdAuth = true;
