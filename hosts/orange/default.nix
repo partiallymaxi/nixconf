@@ -1,11 +1,12 @@
 {
+  hostname,
   username,
   ...
 }:
 {
   imports = [ ../../modules/system/darwin.nix ];
 
-  networking.hostName = "orange";
+  networking.hostName = "${hostname}";
 
   system = {
     # Used for backwards compatibility, please read the changelog before changing.

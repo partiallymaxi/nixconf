@@ -1,11 +1,11 @@
-{ ... }:
+{ hostname, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system
   ];
 
-  networking.hostName = "blueberry";
+  networking.hostName = "${hostname}";
 
   host.is_headless = true;
 

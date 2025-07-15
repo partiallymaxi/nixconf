@@ -38,9 +38,12 @@
           let
             inherit (inputs.nixpkgs) lib;
             mylib = import ./utils.nix { inherit lib; };
+
             username = "maxi";
+            hostname = "orange";
+
             specialArgs = {
-              inherit username mylib;
+              inherit hostname username mylib;
             };
           in
           nix-darwin.lib.darwinSystem {
@@ -48,7 +51,7 @@
             system = "aarch64-darwin";
 
             modules = [
-              ./hosts/orange
+              ./hosts/${hostname}
 
               home-manager.darwinModules.home-manager
               {
@@ -56,7 +59,9 @@
                 home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = import ./users/${username}/darwin-home.nix;
+
+                # home-manager.users.${username} = import ./hosts/${hostname}/${username}/home.nix;
+                home-manager.users.${username} = import ./hosts/${hostname}/home.nix;
 
               }
             ];
@@ -66,9 +71,12 @@
       nixosConfigurations = {
         blueberry =
           let
-            username = "maxi";
             inherit (inputs.nixpkgs) lib;
             mylib = import ./utils.nix { inherit lib; };
+
+            username = "maxi";
+            hostname = "orange";
+
             specialArgs = { inherit username mylib; };
           in
           nixpkgs.lib.nixosSystem {
@@ -84,7 +92,9 @@
                 home-manager.useUserPackages = true;
 
                 home-manager.extraSpecialArgs = inputs // specialArgs;
-                home-manager.users.${username} = import ./users/${username}/headless-home.nix;
+
+                # home-manager.users.${username} = import ./hosts/${hostname}/${username}/home.nix;
+                home-manager.users.${username} = import ./hosts/${hostname}/home.nix;
               }
             ];
           };
