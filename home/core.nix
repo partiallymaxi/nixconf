@@ -1,5 +1,12 @@
-{ username, lib, utils, ... }: with lib; {
-  imports = lists.subtractLists [ ./darwin.nix ./core.nix ] (utils.listFiles ./.);
+{
+  username,
+  lib,
+  utils,
+  ...
+}:
+with lib;
+{
+  imports = lists.subtractLists [ ./darwin.nix ./core.nix ./default.nix ] (utils.listFiles ./.);
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

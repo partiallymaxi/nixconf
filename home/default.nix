@@ -1,4 +1,11 @@
-{ utils, lib, config, ... }: with lib; {
+{
+  utils,
+  lib,
+  config,
+  ...
+}:
+with lib;
+{
   imports = lists.remove darwin.nix utils.listFiles ./.;
 
 }
