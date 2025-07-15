@@ -67,7 +67,9 @@
         blueberry =
           let
             username = "maxi";
-            specialArgs = { inherit username; };
+            inherit (inputs.nixpkgs) lib;
+            utils = import ./utils.nix { inherit lib; };
+            specialArgs = { inherit username utils; };
           in
           nixpkgs.lib.nixosSystem {
             inherit specialArgs;
