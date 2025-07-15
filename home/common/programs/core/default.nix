@@ -7,6 +7,8 @@
 with lib;
 {
 
+  imports = [ ./fastfetch.nix ];
+
   config = mkIf config.programs.core.enable {
     home.packages = with pkgs; [
       # ssh
@@ -25,7 +27,6 @@ with lib;
       nnn # tui folder
       fzf # fuzzy finder
       grc # generic colorizer
-      fastfetch
 
       # containerization
       docker-compose
