@@ -77,14 +77,14 @@
             username = "maxi";
             hostname = "orange";
 
-            specialArgs = { inherit username mylib; };
+            specialArgs = { inherit hostname username mylib; };
           in
           nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             system = "aarch64-linux";
 
             modules = [
-              ./hosts/blueberry
+              ./hosts/${hostname}
 
               home-manager.nixosModules.home-manager
               {
