@@ -23,7 +23,8 @@ with lib;
       # utils
       nh # nix cli
       ripgrep # better grep
-      htop # alternate top
+      bottom # rust alternative to top
+      htop # another alternative to top
       nnn # tui folder
       fzf # fuzzy finder
       grc # generic colorizer
