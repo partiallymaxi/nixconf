@@ -18,6 +18,7 @@
     ./plugins/treesitter.nix
     ./plugins/colorizer.nix
     ./plugins/oil.nix
+    ./plugins/lazygit.nix
 
     # NOTE: Add/Configure additional plugins for Kickstart.nixvim
     #
