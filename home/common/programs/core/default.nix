@@ -31,6 +31,7 @@ with lib;
 
       # containerization
       docker-compose
+      kubectl
     ];
 
     programs = {
