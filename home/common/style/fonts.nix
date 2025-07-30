@@ -2,7 +2,7 @@
   pkgs,
   lib,
   config,
-  private-fonts,
+  # private-fonts,
   ...
 }:
 {
@@ -23,9 +23,9 @@
       noto-fonts
       noto-fonts-emoji
 
-      private-fonts.packages."${pkgs.system}".codelia
-      private-fonts.packages."${pkgs.system}".tabulamore-script
-
+      # private-fonts.packages."${pkgs.system}".codelia
+      # private-fonts.packages."${pkgs.system}".tabulamore-script
+      #
     ];
 
     fonts.fontconfig.enable = true;

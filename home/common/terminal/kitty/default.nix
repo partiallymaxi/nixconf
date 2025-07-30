@@ -27,7 +27,8 @@ with lib;
       settings = {
         cursor_shape = "block";
 
-        font_family = mkIf (config.style.fonts.enable) "Codelia Ligatures";
+        font_family = mkIf (config.style.fonts.enable) "CaskaydiaCove Nerd Font Mono";
+
         font_size = 14;
 
         shell = mkIf (config.shell.exec != "") "${config.shell.exec}";
