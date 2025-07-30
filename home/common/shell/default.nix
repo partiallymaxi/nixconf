@@ -39,6 +39,7 @@ with lib;
       aliases = mkIf config.programs.core.enable {
         ls = "eza -la";
         cat = "bat";
+        top = "btm";
         ff = "fastfetch";
         please = "sudo";
       };
