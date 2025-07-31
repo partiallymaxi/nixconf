@@ -29,7 +29,7 @@ with lib;
 
         font_family = mkIf (config.style.fonts.enable) "CaskaydiaCove Nerd Font Mono";
 
-        font_size = 14;
+        font_size = 16;
 
         shell = mkIf (config.shell.exec != "") "${config.shell.exec}";
 
