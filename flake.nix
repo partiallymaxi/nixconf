@@ -43,14 +43,21 @@
             username = "masaparov";
             hostname = "masaparov-1";
 
-            specialArgs = {
+            system = "x86_64-linux";
+
+            pkgs = import nixpkgs {
+              inherit system;
+              config = {
+                allowUnfree = true;
+              };
+            };
+
+            extraSpecialArgs = {
               inherit hostname username mylib;
             };
           in
           home-manager.lib.homeManagerConfiguration {
-            inherit specialArgs;
-            system = "x86_64-linux";
-            pkgs = import nixpkgs { system = "x86_64-linux"; };
+            inherit extraSpecialArgs pkgs;
 
             modules = [
               ./hosts/${hostname}/home.nix
