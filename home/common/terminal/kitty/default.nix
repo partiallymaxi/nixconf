@@ -27,7 +27,7 @@ with lib;
       settings = {
         cursor_shape = "block";
 
-        font_family = mkIf (config.style.fonts.enable) "CaskaydiaCove Nerd Font Mono";
+        font_family = mkIf (config.style.fonts.enable) "family='CaskaydiaCove Nerd Font Mono'";
 
         font_size = 16;
 
