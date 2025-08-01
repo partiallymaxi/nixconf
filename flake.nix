@@ -34,6 +34,29 @@
       ...
     }:
     {
+      homeConfigurations = {
+        vdi-1 =
+          let
+            inherit (inputs.nixpkgs) lib;
+            mylib = import ./utils.nix { inherit lib; };
+
+            username = "masaparov";
+            hostname = "masaparov-1";
+
+            specialArgs = {
+              inherit hostname username mylib;
+            };
+          in
+          home-manager.lib.homeManagerConfiguration {
+            inherit specialArgs;
+            system = "aarch64-darwin";
+
+            modules = [
+              ./hosts/${hostname}/home.nix
+            ];
+          };
+      };
+
       darwinConfigurations = {
         tangerine =
           let
