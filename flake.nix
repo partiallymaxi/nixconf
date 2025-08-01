@@ -49,7 +49,7 @@
           in
           home-manager.lib.homeManagerConfiguration {
             inherit specialArgs;
-            system = "aarch64-darwin";
+            system = "x86_64-linux";
 
             modules = [
               ./hosts/${hostname}/home.nix
