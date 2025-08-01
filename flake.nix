@@ -50,6 +50,7 @@
           home-manager.lib.homeManagerConfiguration {
             inherit specialArgs;
             system = "x86_64-linux";
+            pkgs = import nixpkgs { inherit system; };
 
             modules = [
               ./hosts/${hostname}/home.nix
