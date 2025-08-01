@@ -44,6 +44,8 @@
             hostname = "masaparov-1";
 
             system = "x86_64-linux";
+            # standalone HM workaround
+            osConfig.host.is_headless = true;
 
             pkgs = import nixpkgs {
               inherit system;
@@ -52,8 +54,13 @@
               };
             };
 
-            extraSpecialArgs = {
-              inherit hostname username mylib;
+            extraSpecialArgs = inputs // {
+              inherit
+                hostname
+                username
+                mylib
+                osConfig
+                ;
             };
           in
           home-manager.lib.homeManagerConfiguration {
